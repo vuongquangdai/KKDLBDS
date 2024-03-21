@@ -16,7 +16,7 @@ interested in and making informed decisions regarding real estate investments in
 ### Regression Algorithms
 - Criteria for Evaluating Regression Models: In practice, there are many criteria to evaluate regression models.
 For example, evaluation based on absolute error value, relative error, based on squared error, etc.
-- Here we will use:
+- Here I will use:
   - MSE (Mean Squared Error): Represents the average squared difference between the actual value and the predicted value, extracted by squaring the difference.
   - MAE (Mean Absolute Error): Represents the average absolute error, indicating the difference between the original value and the predicted value, extracted by taking the average absolute difference in the dataset.
   - R-squared: Represents the fit of the model to the dataset. Similar to accuracy.
