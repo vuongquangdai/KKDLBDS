@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Prediction</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Machine Learning</h1>
+            <h1>Price Prediction</h1>
+        </div>
+        <h3>Dựa theo các thuộc tính</h3>
+        <form id="input-form">
+            <div>
+                <label for="dt_san" style="margin-left: -132px;">Diện tích sử dụng (m2):</label>
+                <input type="text" id="dt_san" name="dt_san" placeholder="Nhập diện tích sử dụng ..." required>
+            </div>
+            <div>
+                <label for="chieu_rong" style="margin-left: -162px;">Chiều rộng đất (m):</label>
+                <input type="text" id="chieu_rong" name="chieu_rong" placeholder="Nhập chiều rộng ..." required>
+            </div>
+            <div>
+                <label for="phong_ngu" style="margin-left: -196px;">Số phòng ngủ:</label>
+                <input type="text" id="phong_ngu" name="phong_ngu" placeholder="Nhập số phòng ngủ..." required>
+            </div>
+            <div>
+                <label for="phong_tam" style="margin-left: -196px;">Số phòng tắm:</label>
+                <input type="text" id="phong_tam" name="phong_tam" placeholder="Nhập số phòng tắm..." required>
+            </div>
+            <div>
+                <label for="duong_vao" style="margin-left: -186px;">Đường vào (m):</label>
+                <input type="text" id="duong_vao" name="duong_vao" placeholder="Nhập độ rộng đường vào (m)..." required>
+            </div>
+            <button type="submit">Dự đoán</button>
+        </form>
+        <p id="prediction-result"></p>
+        
+        <script>
+            document.getElementById("input-form").addEventListener("submit", function (event) {
+                event.preventDefault();
+                const dt_san = document.getElementById("dt_san").value;
+                const chieu_rong = document.getElementById("chieu_rong").value;
+                const phong_ngu = document.getElementById("phong_ngu").value;
+                const phong_tam = document.getElementById("phong_tam").value;
+                const duong_vao = document.getElementById("duong_vao").value;
+    
+                // Create a JSON object to send to the Flask API.
+                const inputData = {
+                    "dt_san": dt_san,
+                    "chieu_rong": chieu_rong,
+                    "phong_ngu": phong_ngu,
+                    "phong_tam": phong_tam,
+                    "duong_vao": duong_vao
+                };
+    
+                // Send a POST request to the Flask API endpoint.
+                fetch("/predict", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(inputData),
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        const predictionResult = document.getElementById("prediction-result");
+                        predictionResult.innerHTML = `Giá Dự Đoán: ${data.predicted_price} tỷ VNĐ`;
+                    })
+                    .catch((error) => {
+                        console.error("Lỗi:", error);
+                    });
+            });
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+pip install Flask
+pip install numpy
+pip install pandas 
+pip install sklearn
+pip install seaborn
+pip install tensorflow
+pip install matplotlib
+pip install scikit-learn
+
+###--------------------------------------
+
+Dưới đây là các kết quả đánh giá hiệu suất của các mô hình dự đoán sử dụng các chỉ số :
+
+1. Linear Regression:
+   - MSE: 0.1616238063215775
+   - MAE: 0.28012401676752496
+   - R2_score: 97.01%
+   - RMSE: 0.40202463397356325
+
+2. Decision Tree Regression:
+   - MSE: 0.5933999999999999
+   - MAE: 0.5719047619047619
+   - R2_score: 89.01%
+   - RMSE: 0.7703246069028302
+
+3. Random Forest Regression:
+   - MSE: 0.4974201685714288
+   - MAE: 0.5771428571428571
+   - R2_score: 90.79%
+   - RMSE: 0.7052802057136077
+
+4. Neural Network Regression:
+   - MSE: 0.6504813542258001
+   - MAE: 0.6546218776702881
+   - R2_score: 87.95%
+   - RMSE: 0.8065242428010457
+
+5. Lasso Model Regression:
+   - MSE: 1.0347997572119716
+   - MAE: 0.8274041542893897
+   - R2_score: 80.84%
+   - RMSE: 1.017251078747018
+
+6. Gradient Boosting Regression:
+   - MSE: 0.3412463089497372
+   - MAE: 0.4312429214847555
+   - R2_score: 93.68%
+   - RMSE: 0.5841629130214766
+
+Dựa vào các chỉ số trên:
+- Linear Regression có hiệu suất tốt nhất với MSE thấp, MAE thấp, R2_score gần 97.01% và RMSE thấp nhất (0.4020), cho thấy mô hình này phù hợp với dữ liệu và dự đoán tốt.
+- Random Forest Regression và Gradient Boosting Regression cũng có hiệu suất tốt, với MSE, MAE, R2_score và RMSE tương đối thấp.
+- Decision Tree Regression và Neural Network Regression có hiệu suất kém hơn so với các mô hình khác, với MSE, MAE, R2_score và RMSE cao hơn.
+- Lasso Model Regression có hiệu suất kém nhất trong số tất cả các mô hình, với MSE, MAE, R2_score và RMSE cao nhất.
+
+Dựa vào tất cả các chỉ số, Linear Regression là mô hình tốt nhất trong trường hợp này.
