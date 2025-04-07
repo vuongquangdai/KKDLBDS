@@ -1,6 +1,5 @@
 # Building an application to predict real estate prices in Ninh Kiều - Cần Thơ
 
-![Website](https://kkdlbds.onrender.com)
 The dataset comprises 207 property records, with the price variable being the target, while the remaining 
 columns contain property-related information such as usable area, width, number of bedrooms, number of bathrooms, and road frontage.
 
@@ -52,5 +51,8 @@ Regression equation:
 
   _**muc_gia = -0.9789 + 0.0027*dt_san + 0.371*chieu_rong + 1.4762*phong_ngu - 0.5772*phong_tam + 0.1304*duong_vao**_
 
+## Live Demo
+
+Access the application at: [https://kkdlbds.onrender.com](https://kkdlbds.onrender.com)
 
 
